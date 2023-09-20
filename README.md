@@ -2,21 +2,6 @@
 
 Prompt format of LLM.
 
-## [lmsys/vicuna-7b-v1.3](https://huggingface.co/lmsys/vicuna-7b-v1.3)
-
-Referring to this [link](https://huggingface.co/junelee/wizard-vicuna-13b/discussions/1)
-
-```python
-prompt = "USER: " + INSTRUCTION + "\nASSISTANT:"
-```
-
-Example
-
-```text
-USER: What is 4x8?
-ASSISTANT:
-```
-
 ## [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
 
 Referring to this [link](https://www.reddit.com/r/LocalLLaMA/comments/155po2p/get_llama_2_prompt_format_right/)
@@ -35,6 +20,82 @@ If a question does not make any sense, or is not factually coherent, explain why
 <</SYS>>
 
 There's a llama in my garden 😱 What should I do? [/INST]
+```
+
+## [lmsys/vicuna-7b-v1.3](https://huggingface.co/lmsys/vicuna-7b-v1.3)
+
+Referring to this [link](https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md#prompt-template)
+
+```python
+prompt = "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.\n\nUSER: " + INSTRUCTION + "\nASSISTANT:"
+```
+
+Example
+
+```text
+A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.
+
+USER: What is 4x8?
+ASSISTANT:
+```
+
+## [WizardLM/WizardLM-13B-V1.2](https://huggingface.co/WizardLM/WizardLM-13B-V1.2)
+
+Referring to this [link](https://huggingface.co/WizardLM/WizardLM-13B-V1.2)(The same as vicuna)
+
+## [NousResearch/Nous-Hermes-Llama2-13b](https://huggingface.co/NousResearch/Nous-Hermes-Llama2-13b)
+
+Referring to this [link](https://huggingface.co/NousResearch/Nous-Hermes-Llama2-13b)
+
+```python
+prompt = "### Instruction:\n" + INSTRUCTION + "\n### Response:"
+```
+
+Or
+
+```python
+prompt = "### Instruction:\n" + INSTRUCTION + "\n### Input:" + INPUT + "\n### Response:"
+```
+
+Example
+
+```text
+### Instruction:
+What is 4x8?
+
+### Response:
+```
+
+Or
+
+```text
+### Instruction:
+Complete the following sentence please.
+
+### Input
+I am a fan of 
+
+### Response:
+```
+
+## [psmathur/orca_mini_v3_13b](https://huggingface.co/psmathur/orca_mini_v3_13b)
+
+Referring to this [link](https://huggingface.co/psmathur/orca_mini_v3_13b)
+
+```python
+prompt = "### System:\n" + "You are an AI assistant that follows instruction extremely well. Help as much as you can.\n" + "\n### User:" + INSTRUCTION + "\n### Assistant:"
+```
+
+Example
+
+```text
+### System:
+You are an AI assistant that follows instruction extremely well. Help as much as you can.
+
+### User:
+Tell me about Orcas.
+
+### Assistant:
 ```
 
 ## [baichuan-inc/Baichuan-7B](https://huggingface.co/baichuan-inc/Baichuan-7B)
